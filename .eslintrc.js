@@ -7,11 +7,14 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
     ecmaFeatures: {
-      legacyDecorators: true
+      legacyDecorators: true,
+      jsx: true,
     }
   },
   plugins: [
-    'ember'
+    'ember',
+    'babel',
+    'react',
   ],
   extends: [
     'eslint:recommended',
@@ -20,7 +23,10 @@ module.exports = {
   env: {
     browser: true
   },
-  rules: {},
+  rules: {
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
+  },
   overrides: [
     // node files
     {
